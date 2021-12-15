@@ -26,6 +26,8 @@ const References = props => {
                 </main>
             </body>
         )
+    } else {
+        return
     }
     
 }
