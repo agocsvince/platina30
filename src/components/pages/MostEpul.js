@@ -14,7 +14,6 @@ const MostEpul = props => {
     }, [isLoaded,mostEpuls])
 
     return (
-    <body>
         <main>
             <section id="wip" className="py-1">
                 <div className="text ml-4 mt-2">
@@ -31,7 +30,6 @@ const MostEpul = props => {
                 </div>
             </section>
         </main>
-    </body>
     )
 }
 

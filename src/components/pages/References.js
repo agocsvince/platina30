@@ -14,7 +14,6 @@ const References = props => {
 
     
     return (
-        <body>
             <main>
                 <section id="wip" className="py-1">
                     <div className="text ml-4 mt-2">
@@ -31,7 +30,6 @@ const References = props => {
                     </div>
                 </section>
             </main>
-        </body>
     )
     
     
