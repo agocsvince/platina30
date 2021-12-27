@@ -11,7 +11,7 @@ export const ReferenceProvider = (props) => {
 
     // Fetch data from CMS
     useEffect(() => {
-        const url = `https://api-eu-central-1.graphcms.com/v2/ckwq5z05y2e8n01xmgomm92ka/master?query=query%20MyQuery%20%7B%0A%20%20referenciaks%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%20%20subtitle%0A%20%20%20%20gallery%20%7B%0A%20%20%20%20%20%20fileName%0A%20%20%20%20%20%20locale%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&operationName=MyQuery`       
+        const url = `https://api-eu-central-1.graphcms.com/v2/ckwq5z05y2e8n01xmgomm92ka/master?query=query%20MyQuery%20%7B%0A%20%20referenciaks%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%20%20gallery%20%7B%0A%20%20%20%20%20%20fileName%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=MyQuery`       
         fetch(url)
         .then(res => res.json())
         .then(json => {

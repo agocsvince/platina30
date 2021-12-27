@@ -17,26 +17,7 @@ const Header = props => {
             }
         });
 
-        console.log(props.target)
         props.target.id = 'current-page'
-
-
-        // let currentPage = '';
-        // for (let letter of window.location.href.split('').reverse()) {
-        //     if (letter === '/') {
-        //         break
-        //     }
-        //     currentPage += letter
-        //     console.log(letter)
-        // }
-    
-        // currentPage = currentPage.split('').reverse().join('')
-        //     if (currentPage === 'most-epul') {
-        //         document.getElementsByClassName('most-epul')[0].id = "current-page";
-        //         }
-
-        // console.log(currentPage)
-
     }, [])
 
     return (

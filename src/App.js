@@ -10,7 +10,6 @@ import ReferenceDetail from './components/ReferenceDetail';
 import { ReferenceProvider } from './ReferenceContext';
 import { MostEpulProvider } from './MostEpulContext';
 import MostEpulDetail from './components/MostEpulDetail';
-import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 

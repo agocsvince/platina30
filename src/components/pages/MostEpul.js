@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MostEpulContext } from '../../MostEpulContext';
+import UrlMaker from '../UrlMaker';
 
 
 const MostEpul = props => {
@@ -11,6 +12,7 @@ const MostEpul = props => {
         if (isLoaded) {
             setstate(mostEpuls)
         }
+        
     }, [isLoaded,mostEpuls])
 
     return (
@@ -22,7 +24,7 @@ const MostEpul = props => {
                 </div>
                 <div className="images grid m-4">
                     {state.map(mostEpul => (
-                        <Link className="image" to={"/most-epul/" + mostEpul.subtitle} key={mostEpul.id}>
+                        <Link className="image" to={"/most-epul/" + UrlMaker(mostEpul.title)} key={mostEpul.id} state={{ title: mostEpul.title}}>
                             <div className="reference-image" key={mostEpul.id} style={{ backgroundImage:"url(" + mostEpul.gallery[0].url + ")"}}/>
                             <h3 className="mb-1">{mostEpul.title}</h3>
                         </Link>

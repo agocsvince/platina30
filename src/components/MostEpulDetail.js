@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import { MostEpulContext } from '../MostEpulContext';
@@ -15,8 +15,9 @@ const MostEpulDetail = props => {
     // Import ReferncesContext
     const { mostEpuls, isLoaded } = useContext(MostEpulContext);
 
-    // Get project name from url
-    const { project } = useParams();
+    // Get project name from location
+    const location = useLocation()
+    const { title } = location.state
 
     // States for current porject and it's gallery
     const [ currentProject, setCurrentProject] = useState({});
@@ -25,17 +26,17 @@ const MostEpulDetail = props => {
     // Get current project from Context
     useEffect(() => {
         if (isLoaded) {
-            const current = mostEpuls.filter(mostEpul => mostEpul.subtitle === project)[0];
-            setCurrentProject(current)
-            setGallery(current.gallery)
+          const current = mostEpuls.filter(mostEpul => mostEpul.title === title)[0];
+          setCurrentProject(current)
+          setGallery(current.gallery)
         }
-    }, [project, mostEpuls, isLoaded])
+    }, [title, mostEpuls, isLoaded])
 
     return (
         <section id="wip" className="py-1">
                 <div className="text ml-4 mt-2">
                     <h4 className="mb-05"><strong className="slash">\</strong> Most épül</h4>
-                    <h2 className="mb-2" id="name" data-name={project}>{currentProject.title}</h2>
+                    <h2 className="mb-2" id="name" data-name={title}>{currentProject.title}</h2>
                 </div>
                 <div className="images grid m-4">
                 {gallery.map(current => (
