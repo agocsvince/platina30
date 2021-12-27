@@ -42,7 +42,7 @@ const ReferenceDetail = props => {
                 <div className="images grid m-4">
                 {gallery.map(current => (
                     // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <a className="image" onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} key={current.id}>
+                    <a className="image" key={current.id} onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} >
                         <img src={current.url} alt="" style={Border}/>
                     </a>
                 ))}

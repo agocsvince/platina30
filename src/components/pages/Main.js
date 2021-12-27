@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../../style.css';
 import headset from "../images/headset.png"
 import quality from "../images/quality.png";
@@ -7,16 +7,10 @@ import best_choice from "../images/best-choice.png";
 import phoroterm from "../images/phoroterm.png";
 import prokoncept from "../images/prokoncept.png";
 import ytong from "../images/ytong.png";
+import MySlider from '../MySlider';
 
 const Main = props => {
-    const [slider, setSlider] = useState([]);
-
-    useEffect(() => {
-        const url = `https://api-eu-central-1.graphcms.com/v2/ckwq5z05y2e8n01xmgomm92ka/master?query=query%20MyQuery%20%7B%0A%20%20sliders%20%7B%0A%20%20%20%20pictures%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%09url%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=MyQuery`;
-        fetch(url)
-        .then(res => res.json())
-        .then(json => setSlider(json.data.sliders[0].pictures));
-    }, []);
+    
     
     return (  
             <main>
@@ -56,25 +50,7 @@ const Main = props => {
                     </div>
                 </section>
                 <section id="slider">
-                    <div className="swiper mySwiper py-4">
-                        <div className="swiper-wrapper">
-                            {/* {slider.map(picture => (
-                                <div className="swiper-slide" key={picture.id}><div style={{backgroundImage:"url(" + picture.url + ")"}}></div></div>
-                            ))} */}
-                          <div className="swiper-slide"><div className="pic-1"></div></div>
-                          <div className="swiper-slide"><div className="pic-2"></div></div>
-                          <div className="swiper-slide"><div className="pic-3"></div></div>
-                          <div className="swiper-slide"><div className="pic-4"></div></div>
-                          <div className="swiper-slide"><div className="pic-5"></div></div>
-                          <div className="swiper-slide"><div className="pic-6"></div></div>
-                          <div className="swiper-slide"><div className="pic-7"></div></div>
-                          <div className="swiper-slide"><div className="pic-8"></div></div>
-                          <div className="swiper-slide"><div className="pic-9"></div></div>
-                        </div>
-                        <div className="swiper-button-next"></div>
-                        <div className="swiper-button-prev"></div>
-                        <div className="swiper-pagination"></div>
-                      </div>
+                    <MySlider />
                 </section>
                 <section id="build" className="pt-6 px-3">
                     <div className="ml-4">

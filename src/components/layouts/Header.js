@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import logo from "../images/logo.png";
 import '../../style.css';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import ScriptTag from 'react-script-tag';
 
 const Header = props => {
+
     return (
         <header className="flex">
                 <div className="logo">
@@ -25,6 +27,7 @@ const Header = props => {
                     <span className="bar"></span>
                     <span className="bar"></span>
                 </div>
+                <ScriptTag type="text/javascript" src="../scripts.js" />
             </header>
     )
 }

@@ -619,7 +619,9 @@ marquee img {
   padding-top: 40px; }
 
 main {
-  margin-top: 76px; }
+  margin-top: 76px; 
+  
+}
   main #house {
     background-color: #F9FBFC; }
     main #house .text .contact .btn {
@@ -749,40 +751,40 @@ main {
       border-radius: 5px; }
   main #slider .swiper {
     background-color: #F9FBFC; }
-    main #slider .swiper .swiper-button-next {
+    main #slider .swiper-button-next {
+      content: 'next';
       color: #F58500; }
-    main #slider .swiper .swiper-button-prev {
+    main #slider .swiper-button-prev {
+      content: 'prev';
       color: #F58500; }
-    main #slider .swiper .swiper-pagination-bullet {
+    main #slider .swiper-wrapper {
+      margin-bottom: 3rem; }
+    main #slider .swiper-pagination-bullets {
+      position: relative;
+      margin: 1rem 0
+    }
+    main #slider .swiper-pagination-bullet {
+      position: relative;
+      margin: 0 .3rem;
+    }
+    main #slider .swiper-pagination-bullet:first-child {
+      margin-left: 0;
+    }
+    main #slider .swiper-pagination-bullet:last-child {
+      margin-right: 0;
+    }
+    main #slider .swiper-pagination-bullet {
       background-color: #c4c4c4;
       opacity: .6; }
-    main #slider .swiper .swiper-pagination-bullet-active {
+    main #slider .swiper-pagination-bullet-active {
       background-color: #F58500;
       opacity: 1; }
-    main #slider .swiper .swiper-slide div {
+    main #slider .swiper-slide div {
       border-radius: 5px;
       background-size: cover !important;
       background-position: center !important;
       padding-bottom: 56.25% !important;
       background-repeat: no-repeat !important; }
-    main #slider .swiper .swiper-slide .pic-1 {
-      background-image: url("components/images/veresegyhaz-1.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-2 {
-      background-image: url("components/images/veresegyhaz-2.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-3 {
-      background-image: url("components/images/veresegyhaz-3.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-4 {
-      background-image: url("components/images/veresegyhaz-4.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-5 {
-      background-image: url("components/images/veresegyhaz-5.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-6 {
-      background-image: url("components/images/veresegyhaz-6.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-7 {
-      background-image: url("components/images/veresegyhaz-7.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-8 {
-      background-image: url("components/images/veresegyhaz-8.jpeg"); }
-    main #slider .swiper .swiper-slide .pic-9 {
-      background-image: url("components/images/veresegyhaz-9.jpeg"); }
 
 .image-source-link {
   color: #98C3D1; }
@@ -876,7 +878,8 @@ main {
     .pages .a {
       margin: 2.5rem 0; }
     .pages.active {
-      left: 0; }
+      left: 0;
+    top: 70px; }
   .hamburger {
     display: block;
     cursor: pointer; }
