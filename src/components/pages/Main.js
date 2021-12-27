@@ -13,7 +13,7 @@ const Main = props => {
     
     return (  
             <main>
-                <section id="house" className="grid pb-4 pl-3">
+                <section id="house" className="grid pt-2 pb-4 pl-3">
                         <div className="text ml-4 mt-4">
                             <h4 className="mb-05"><strong className="slash">\</strong> Garantáltan stressz mentesen</h4>
                             <h2 className="mb-2">Családi ház építés</h2>

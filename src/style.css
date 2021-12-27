@@ -874,7 +874,6 @@ main {
   header.active {
     box-shadow: none; }
   main {
-    padding-top: 2rem;
     margin-top: 64px; }
   .pages {
     position: fixed;
