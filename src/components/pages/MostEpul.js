@@ -17,8 +17,8 @@ const MostEpul = props => {
         <main>
             <section id="wip" className="py-1">
                 <div className="text ml-4 mt-2">
-                    <h4 className="mb-05"><strong className="slash">\</strong> Referenciák</h4>
-                    <h2 className="mb-2">Elkészült munkáink</h2>
+                    <h4 className="mb-05"><strong className="slash">\</strong> Most épül</h4>
+                    <h2 className="mb-2">Folyamatban lévő munkáink</h2>
                 </div>
                 <div className="images grid m-4">
                     {state.map(mostEpul => (

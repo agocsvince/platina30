@@ -11,7 +11,6 @@ import MySlider from '../MySlider';
 
 const Main = props => {
     
-    
     return (  
             <main>
                 <section id="house" className="grid pb-4 pl-3">
@@ -87,7 +86,7 @@ const Main = props => {
                             Cégünk sikere abban rejlik, hogy mindig törekszünk az új és magas szintű technológiák elsajátítására, hogy megfeleljünk a kor követelményeinek. Figyelünk arra, hogy ügyfeleinkkel kölcsönös megelégedettségen alapuló hosszú távú, korrekt kapcsolatot tartsunk fenn. Így napjainkra már több, mint 45 felépült családi ház tekinthető meg referenciaként Pest megye területén. </p>
                     </div>
                 </section>
-                <section id="prices" className="my-6">
+                <section id="prices" className="py-4">
                     <div className="text mx-4">
                         <h4 className="mb-05"><strong className="slash">\</strong> Áraink</h4>
                         <h2 className="mb-2">Mennyibe kerül egy négyzetméter?</h2>
