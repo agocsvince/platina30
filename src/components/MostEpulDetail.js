@@ -34,16 +34,13 @@ const MostEpulDetail = props => {
     return (
         <section id="wip" className="py-1">
                 <div className="text ml-4 mt-2">
-                    <h4 className="mb-05"><strong className="slash">\</strong> Referenciák</h4>
+                    <h4 className="mb-05"><strong className="slash">\</strong> Most épül</h4>
                     <h2 className="mb-2" id="name" data-name={project}>{currentProject.title}</h2>
                 </div>
                 <div className="images grid m-4">
                 {gallery.map(current => (
-                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <a className="image" onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} key={current.id}>
-                        <img src={current.url} alt="" style={Border}/>
-                    </a>
-                ))}
+                  <div className="reference-image" key={current.id} onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} style={{ backgroundImage:"url(" + current.url + ")"}}/>
+                  ))}
                 </div>
                 <div>
         {isOpen && (
@@ -64,10 +61,6 @@ const MostEpulDetail = props => {
       </div>     
     </section>
     );
-}
-
-const Border = {
-        borderRadius: '5px'
 }
 
 export default MostEpulDetail;

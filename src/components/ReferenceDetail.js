@@ -41,11 +41,8 @@ const ReferenceDetail = props => {
                 </div>
                 <div className="images grid m-4">
                 {gallery.map(current => (
-                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                    <a className="image" key={current.id} onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} >
-                        <img src={current.url} alt="" style={Border}/>
-                    </a>
-                ))}
+                  <div className="reference-image" key={current.id} onClick={() => {setIsOpen(true); setPhotoIndex(gallery.indexOf(current))}} title={current.fileName} style={{ backgroundImage:"url(" + current.url + ")"}}/>
+                  ))}
                 </div>
                 <div>
         {isOpen && (
@@ -68,11 +65,6 @@ const ReferenceDetail = props => {
     );
     
 
-}
-
-const Border = {
-        borderRadius: '5px'
-}
-                
+}              
 
 export default ReferenceDetail;

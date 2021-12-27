@@ -23,7 +23,7 @@ const MostEpul = props => {
                 <div className="images grid m-4">
                     {state.map(mostEpul => (
                         <Link className="image" to={"/most-epul/" + mostEpul.subtitle} key={mostEpul.id}>
-                            <img src={mostEpul.gallery[0].url} alt="" className="mb-05"/>
+                            <div className="reference-image" key={mostEpul.id} style={{ backgroundImage:"url(" + mostEpul.gallery[0].url + ")"}}/>
                             <h3 className="mb-1">{mostEpul.title}</h3>
                         </Link>
                     ))}

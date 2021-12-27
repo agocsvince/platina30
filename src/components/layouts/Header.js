@@ -6,6 +6,19 @@ import { HashLink } from 'react-router-hash-link';
 import ScriptTag from 'react-script-tag';
 
 const Header = props => {
+    let currentPage = '';
+    for (let letter of window.location.href.split('').reverse()) {
+        if (letter === '/') {
+            break
+        }
+        currentPage += letter
+        console.log(letter)
+    }
+    console.log(currentPage.split('').reverse().join(''))
+
+    if (currentPage === 'most-epul') {
+        
+    }
 
     return (
         <header className="flex">

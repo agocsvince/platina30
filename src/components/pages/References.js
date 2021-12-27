@@ -23,7 +23,7 @@ const References = props => {
                     <div className="images grid m-4">
                         {state.map(reference => (
                             <Link className="image" to={"/referenciak/" + reference.subtitle} key={reference.id}>
-                                <img src={reference.gallery[0].url} alt="" className="mb-05"/>
+                                <div className="reference-image" key={reference.id} style={{ backgroundImage:"url(" + reference.gallery[0].url + ")"}}/>
                                 <h3 className="mb-1">{reference.title}</h3>
                             </Link>
                         ))}
