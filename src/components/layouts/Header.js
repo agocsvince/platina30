@@ -26,7 +26,7 @@ const Header = props => {
                     <Link to="/"><img src={logo} alt="logo"/></Link>
                 </div>
                 <div className="pages mr-2">
-                    <HashLink to="/#house" onClick={handleClick}>Főoldal</HashLink>
+                    <HashLink to="/#house" id='current-page' onClick={handleClick}>Főoldal</HashLink>
                     <HashLink to="/#work" onClick={handleClick}>Kivitelezés</HashLink>
                     <HashLink to="/#prices" onClick={handleClick}>Árak</HashLink>
                     <HashLink to="/#planning" onClick={handleClick}>Tervezés</HashLink>
