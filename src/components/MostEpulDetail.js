@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import { MostEpulContext } from '../MostEpulContext';
+import addStateFromUrl from './UrlReader';
 
 const MostEpulDetail = props => {
 
@@ -17,6 +18,10 @@ const MostEpulDetail = props => {
 
     // Get project name from location
     const location = useLocation()
+    if (location.state == null) {
+      location.state = { title: '' }
+      location.state.title = addStateFromUrl(location.pathname)
+    }
     const { title } = location.state
 
     // States for current porject and it's gallery
@@ -26,7 +31,7 @@ const MostEpulDetail = props => {
     // Get current project from Context
     useEffect(() => {
         if (isLoaded) {
-          const current = mostEpuls.filter(mostEpul => mostEpul.title === title)[0];
+          const current = mostEpuls.filter(mostEpul => mostEpul.url === title)[0];
           setCurrentProject(current)
           setGallery(current.gallery)
         }

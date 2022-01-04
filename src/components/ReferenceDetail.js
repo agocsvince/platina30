@@ -24,7 +24,7 @@ const ReferenceDetail = props => {
       location.state.title = addStateFromUrl(location.pathname)
     }
     const { title } = location.state
-    
+
     // States for current porject and it's gallery
     const [ currentProject, setCurrentProject] = useState({});
     const [ gallery, setGallery] = useState([]);
@@ -32,7 +32,6 @@ const ReferenceDetail = props => {
     // Get current project from Context
     useEffect(() => {
       if (isLoaded) {
-        console.log(title)
         const current = references.filter(reference => reference.url === title)[0];
         setCurrentProject(current)
         setGallery(current.gallery)

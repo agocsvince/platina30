@@ -1,4 +1,5 @@
 import React, {useState, useEffect, createContext } from 'react';
+import UrlMaker from './components/UrlMaker';
 
 export const MostEpulContext = createContext();
 
@@ -19,7 +20,11 @@ export const MostEpulProvider = (props) => {
             setIsLoaded(true);
         });
     },[])
-
+    if (isLoaded) {
+        mostEpuls.forEach(mostEpul => {
+            mostEpul.url = UrlMaker(mostEpul.title)
+        })
+    }
     return(
         <MostEpulContext.Provider value={{mostEpuls, isLoaded}}>
             {props.children}

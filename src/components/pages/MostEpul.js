@@ -24,7 +24,7 @@ const MostEpul = props => {
                 </div>
                 <div className="images grid m-4">
                     {state.map(mostEpul => (
-                        <Link className="image" to={"/most-epul/" + UrlMaker(mostEpul.title)} key={mostEpul.id} state={{ title: mostEpul.title}}>
+                        <Link className="image" to={"/most-epul/" + UrlMaker(mostEpul.title)} key={mostEpul.id} state={{ title: mostEpul.url }}>
                             <div className="reference-image" key={mostEpul.id} style={{ backgroundImage:"url(" + mostEpul.gallery[0].url + ")"}}/>
                             <h3 className="mb-1">{mostEpul.title}</h3>
                         </Link>
