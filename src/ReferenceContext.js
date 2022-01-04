@@ -1,4 +1,5 @@
 import React, {useState, useEffect, createContext } from 'react';
+import UrlMaker from './components/UrlMaker';
 
 export const ReferenceContext = createContext();
 
@@ -19,7 +20,11 @@ export const ReferenceProvider = (props) => {
             setIsLoaded(true);
             });
     },[])
-
+    if (isLoaded) {
+        references.forEach(reference => {
+            reference.url = UrlMaker(reference.title)
+        })
+    }
     return(
         <ReferenceContext.Provider value={{references, isLoaded}}>
             {props.children}

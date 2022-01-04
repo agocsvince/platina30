@@ -1,5 +1,4 @@
-
-export default function UrlMaker(url) {
+const UrlMaker = (url) => {
     
     url = url.replace(/^\s+|\s+$/g, ''); // trim
     url = url.toLowerCase();
@@ -17,3 +16,5 @@ export default function UrlMaker(url) {
 
     return url
 }
+
+export default UrlMaker;

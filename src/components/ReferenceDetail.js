@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import { ReferenceContext } from '../ReferenceContext';
+import  addStateFromUrl  from './UrlReader';
 
 
 const ReferenceDetail = props => {
@@ -15,11 +16,15 @@ const ReferenceDetail = props => {
 
     // Import ReferncesContext
     const { references, isLoaded } = useContext(ReferenceContext);
-
+    
     // Get project name from location
     const location = useLocation()
+    if (location.state == null) {
+      location.state = { title: '' }
+      location.state.title = addStateFromUrl(location.pathname)
+    }
     const { title } = location.state
-
+    
     // States for current porject and it's gallery
     const [ currentProject, setCurrentProject] = useState({});
     const [ gallery, setGallery] = useState([]);
@@ -27,7 +32,8 @@ const ReferenceDetail = props => {
     // Get current project from Context
     useEffect(() => {
       if (isLoaded) {
-        const current = references.filter(reference => reference.title === title)[0];
+        console.log(title)
+        const current = references.filter(reference => reference.url === title)[0];
         setCurrentProject(current)
         setGallery(current.gallery)
       }
